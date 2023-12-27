@@ -40,7 +40,7 @@ This Python application, built using the Tkinter library, provides a user-friend
 
 
 
-- pip install -r requirements.txt
+- `pip install -r requirements.txt`
 
 
 

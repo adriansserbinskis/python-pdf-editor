@@ -36,13 +36,7 @@ This Python application, built using the Tkinter library, provides a user-friend
 
 1. Ensure you have Python 3.x installed on your machine with Tkinter.
 
-2. Install the required libraries using the following command:
-
-
-
-- `pip install -r requirements.txt`
-
-
+2. Install the required libraries using the following command: `pip install -r requirements.txt`
 
 3. Run the Python script `python python-pdf-editor.py` to launch the application.
 

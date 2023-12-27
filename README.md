@@ -1,7 +1,7 @@
 # Python PDF Editor
 
 This Python application, built using the Tkinter library, provides a user-friendly interface for splitting and merging PDF files. It uses the PyPDF2 library for handling PDF file operations.
-‎
+<br/>
 
 ## Features
 
@@ -20,7 +20,7 @@ This Python application, built using the Tkinter library, provides a user-friend
 - Arrange the order of files in the merge list.
 
 - Save the merged PDF file with a specified name.
-‎
+<br/>
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ This Python application, built using the Tkinter library, provides a user-friend
 2. Install the required libraries using the following command: `pip install -r requirements.txt`
 
 3. Run the Python script `python python-pdf-editor.py` to launch the application.
-‎
+<br/>
 
 ## Usage Instructions
 

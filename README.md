@@ -52,3 +52,12 @@
 3. Noklikšķiniet uz pogas "Merge".
 
 4. Izvēlieties vietu, kur saglabāt apvienoto PDF failu.
+<br/>
+
+## Lietotās bibliotēkas
+
+- **Tkinter**: Tkinter ir standarta GUI (grafiskā lietotāja interfeisa) rīkkopa, kas tiek komplektēta ar Python. Tas nodrošina rīku komplektu intuitīvu un interaktīvu grafisko saskarņu izveidei, padarot to par ideālu izvēli darbvirsmas lietojumprogrammu izstrādei.
+
+- **PyPDF2**: PyPDF2 ir Python bibliotēka, kas īpaši izstrādāta darbam ar PDF failiem. Tas ļauj lietojumprogrammai lasīt, apstrādāt un rakstīt PDF dokumentus. PyPDF2 iespējas ietver vairāku PDF failu sapludināšanu, PDF failu sadalīšanu, pamatojoties uz norādītajiem lappušu diapazoniem, un daudz ko citu.
+
+- **os**: OS bibliotēka ir Python standarta bibliotēkas daļa un nodrošina veidu, kā mijiedarboties ar operētājsistēmu. Šajā projektā tas tiek izmantots ar failiem saistītām darbībām, piemēram, faila esamības pārbaudei un failu ceļu pārvaldībai.

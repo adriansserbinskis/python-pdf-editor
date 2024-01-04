@@ -149,7 +149,7 @@ class App(tk.Tk):
     def Button5_command(self):
         try:
             selected_items = self.Listbox2.get_children()
-            if not selected_items: return ttk.tkinter.messagebox.showinfo("Info", "No files selected for merging")
+            if not selected_items: return ttk.tkinter.messagebox.showinfo("Info", "No files selected for converting")
             out_filename = fd.asksaveasfile(title='Save a file', defaultextension='.pdf', filetypes=[('PDF files', '*.pdf')]).name
             if (out_filename == ""): return
             pdf_writer = PyPDF2.PdfWriter()

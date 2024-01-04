@@ -1,54 +1,54 @@
-# Python PDF Editor
+# Python PDF redaktors
 
-This Python application, built using the Tkinter library, provides a user-friendly interface for splitting and merging PDF files. It uses the PyPDF2 library for handling PDF file operations.
+Šī Python lietojumprogramma, kas izveidota, izmantojot Tkinter bibliotēku, nodrošina lietotājam draudzīgu saskarni PDF failu sadalīšanai un apvienošanai. Tas izmanto PyPDF2 bibliotēku, lai apstrādātu PDF failu darbības.
 <br/><br/>
 
-## Features
+## Iespējas
 
-##### Merge PDF
+##### Sadalīt PDF
 
-- Select a PDF file using the file dialog.
+- Atlasiet PDF failu, izmantojot failu dialoglodziņu.
 
-- Specify page ranges to extract and create a new PDF file.
+- Norādiet lapu diapazonus, lai izvilktu un izveidotu jaunu PDF failu.
 
-- Supports comma-separated page ranges (e.g., 1-3, 5, 8-10).
+- Atbalsta ar komatu atdalītus lapu diapazonus (piem., 1-3, 5, 8-10).
 
-##### Merge PDF
+##### Apvienot PDF
 
-- Choose multiple PDF files to merge into a single PDF.
+- Izvēlieties vairākus PDF failus, lai tos apvienotu vienā PDF failā.
 
-- Arrange the order of files in the merge list.
+- Sakārtojiet failu secību sapludināšanas sarakstā.
 
-- Save the merged PDF file with a specified name.
+- Saglabājiet apvienoto PDF failu ar noteiktu nosaukumu.
 <br/>
 
-## Getting Started
+## Darba sākšana
 
-1. Ensure you have Python 3.x installed on your machine with Tkinter.
+1. Pārliecinieties, vai jūsu datorā ar Tkinter ir instalēts Python 3.x.
 
-2. Install the required libraries using the following command: `pip install -r requirements.txt`
+2. Instalējiet vajadzīgās bibliotēkas, izmantojot šādu komandu: `pip install -r prasības.txt`
 
-3. Run the Python script `python python-pdf-editor.py` to launch the application.
+3. Palaidiet Python skriptu python python-pdf-editor.py, lai palaistu lietojumprogrammu.
 <br/>
 
-## Usage Instructions
+## Lietošanas instrukcijas
 
 ##### Split Tab
 
-1. Click the "+" button to select a PDF file.
+1. Noklikšķiniet uz pogas "+", lai atlasītu PDF failu.
 
-2. Enter page ranges in the format (e.g., 1-3, 5, 8-10).
+2. Ievadiet lappušu diapazonus formātā (piemēram, 1-3, 5, 8-10).
 
-3. Click the "Split" button.
+3. Noklikšķiniet uz pogas "Split".
 
-4. Choose a location to save the new PDF file.
+4. Izvēlieties vietu, kur saglabāt jauno PDF failu.
 
 ##### Merge Tab
 
-1. Click the "+" button to add PDF files to the merge list.
+1. Noklikšķiniet uz pogas "+", lai sapludināšanas sarakstam pievienotu PDF failus.
 
-2. Arrange the order of files using the Treeview.
+2. Noņemiet no saraksta nevēlamos PDF failus.
 
-3. Click the "Merge" button.
+3. Noklikšķiniet uz pogas "Merge".
 
-4. Choose a location to save the merged PDF file.
+4. Izvēlieties vietu, kur saglabāt apvienoto PDF failu.

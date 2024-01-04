@@ -20,6 +20,13 @@
 - Sakārtojiet failu secību sapludināšanas sarakstā.
 
 - Saglabājiet apvienoto PDF failu ar noteiktu nosaukumu.
+
+##### Attēla konvertēšana uz PDF
+
+- Atbalstītie attēlu formāti ietver JPEG, PNG, BMP un citus.
+
+- Saglabājiet pārveidotos attēlus PDF failā ar noteiktu nosaukumu.
+
 <br/>
 
 ## Darba sākšana
@@ -33,7 +40,7 @@
 
 ## Lietošanas instrukcijas
 
-##### Split Tab
+##### Sadalīt cilne
 
 1. Noklikšķiniet uz pogas "+", lai atlasītu PDF failu.
 
@@ -43,15 +50,25 @@
 
 4. Izvēlieties vietu, kur saglabāt jauno PDF failu.
 
-##### Merge Tab
+##### Apvienot cilne
 
 1. Noklikšķiniet uz pogas "+", lai sapludināšanas sarakstam pievienotu PDF failus.
 
-2. Noņemiet no saraksta nevēlamos PDF failus.
+2. Noņemiet no saraksta nevēlamos PDF failus, izveloties, un spiežot pogu DELETE.
 
 3. Noklikšķiniet uz pogas "Merge".
 
 4. Izvēlieties vietu, kur saglabāt apvienoto PDF failu.
+
+##### Attēli uz PDF cilne
+
+1. Noklikšķiniet uz pogas "+", lai sarakstam pievienotu attēla failus.
+
+2. Noņemiet no saraksta nevēlamos attēla failus, izveloties, un spiežot pogu DELETE.
+
+3. Noklikšķiniet uz pogas "Convert".
+
+4. Izvēlieties vietu, kur saglabāt PDF failu.
 <br/>
 
 ## Lietotās bibliotēkas
@@ -60,4 +77,8 @@
 
 - **PyPDF2**: PyPDF2 ir Python bibliotēka, kas īpaši izstrādāta darbam ar PDF failiem. Tas ļauj lietojumprogrammai lasīt, apstrādāt un rakstīt PDF dokumentus. PyPDF2 iespējas ietver vairāku PDF failu sapludināšanu, PDF failu sadalīšanu, pamatojoties uz norādītajiem lappušu diapazoniem, un daudz ko citu.
 
-- **os**: OS bibliotēka ir Python standarta bibliotēkas daļa un nodrošina veidu, kā mijiedarboties ar operētājsistēmu. Šajā projektā tas tiek izmantots ar failiem saistītām darbībām, piemēram, faila esamības pārbaudei un failu ceļu pārvaldībai.
+- **img2pdf**: Img2pdf ir bibliotēka, ko izmanto attēlu konvertēšanai PDF formātā. Šajā projektā to izmanto attēlu datu konvertēšanai PDF formātā pirms apvienošanas.
+
+- **io**: Modulis "io" ir Python standarta bibliotēkas daļa un nodrošina rīkus darbam ar straumēm un ievades/izvades darbībām. Tas tiek izmantots šajā projektā, lai izveidotu straumi no binārajiem datiem PyPDF2 bibliotēkai.
+
+- **os**: Modulis "os" ir Python standarta bibliotēkas daļa un nodrošina veidu, kā mijiedarboties ar operētājsistēmu. Šajā projektā tas tiek izmantots ar failiem saistītām darbībām, piemēram, faila esamības pārbaudei un failu ceļu pārvaldībai.

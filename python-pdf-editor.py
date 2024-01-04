@@ -93,7 +93,7 @@ class App(tk.Tk):
         self.Button5 = ttk.Button(tab, text="Convert", command=self.Button5_command)
         self.Button5.place(x=50, y=280, width=70, height=25)
 
-        self.Button6 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox2, [('Image files', '*.png;*.jpeg;*.jpg;*.bmp')]))
+        self.Button6 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox2, [('Image files', '*.png;*.jpeg;*.jpg;*.bmp;*.gif')]))
         self.Button6.place(x=20, y=280, width=25, height=25)
 
     def Listbox_add(self, listbox, filetypes):

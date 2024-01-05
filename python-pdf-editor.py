@@ -15,10 +15,10 @@ from pypdf import PdfReader
 def extract_pages(page_string, total_pages):
     try:
         result_pages = []
-        page_ranges = page_string.split(',')
+        page_ranges = page_string.split(",")
 
         for page_range in page_ranges:
-            start_end = page_range.split('-')
+            start_end = page_range.split("-")
 
             if len(start_end) == 1:
                 page = int(start_end[0])
@@ -42,7 +42,7 @@ class App(tk.Tk):
         self.title("PDF Editor")
         self.width=500
         self.height=400
-        self.geometry('%dx%d+%d+%d' % (self.width, self.height, (self.winfo_screenwidth()-self.width)/2, (self.winfo_screenheight()-self.height)/2))
+        self.geometry("%dx%d+%d+%d" % (self.width, self.height, (self.winfo_screenwidth()-self.width)/2, (self.winfo_screenheight()-self.height)/2))
         self.resizable(width=False, height=False)
         self.style = ttk.Style(self)
         self.style.theme_use("xpnative")
@@ -87,7 +87,7 @@ class App(tk.Tk):
         self.Button3 = ttk.Button(tab, text="Merge", command=self.Button3_command)
         self.Button3.place(x=50, y=280, width=70, height=25)
 
-        self.Button4 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox1, [('PDF files', '*.pdf')]))
+        self.Button4 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox1, [("PDF files", "*.pdf")]))
         self.Button4.place(x=20, y=280, width=25, height=25)
 
     def __init_tab3(self, tab):
@@ -98,7 +98,7 @@ class App(tk.Tk):
         self.Button5 = ttk.Button(tab, text="Convert", command=self.Button5_command)
         self.Button5.place(x=50, y=280, width=70, height=25)
 
-        self.Button6 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox2, [('Image files', '*.png;*.jpeg;*.jpg;*.bmp;*.gif')]))
+        self.Button6 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox2, [("Image files", "*.png;*.jpeg;*.jpg;*.bmp;*.gif")]))
         self.Button6.place(x=20, y=280, width=25, height=25)
 
     def __init_tab4(self, tab):
@@ -109,17 +109,17 @@ class App(tk.Tk):
         self.Button7 = ttk.Button(tab, text="Extract", command=self.Button8_command)
         self.Button7.place(x=50, y=55, width=70, height=25)
 
-        self.Button8 = ttk.Button(tab, text="+", command=lambda: self.Entry_set(self.Entry3_text, [('PDF files', '*.pdf')]))
+        self.Button8 = ttk.Button(tab, text="+", command=lambda: self.Entry_set(self.Entry3_text, [("PDF files", "*.pdf")]))
         self.Button8.place(x=20, y=55, width=25, height=25)
 
     def Entry_set(self, entry_text, filetypes):
-        filename = fd.askopenfilename(title='Open a file', filetypes=[('PDF files', '*.pdf')])
+        filename = fd.askopenfilename(title="Open a file", filetypes=[("PDF files", "*.pdf")])
         entry_text.set(filename)
         return filename
 
     def Listbox_add(self, listbox, filetypes):
-        files = fd.askopenfilenames(title='Open a files', filetypes=filetypes)
-        for item in files: listbox.insert('', 'end', text=item)
+        files = fd.askopenfilenames(title="Open a files", filetypes=filetypes)
+        for item in files: listbox.insert("", "end", text=item)
 
     def Listbox_delete(self, listbox):
         for item in listbox.selection(): listbox.delete(item)
@@ -133,7 +133,7 @@ class App(tk.Tk):
         pages = extract_pages(self.Entry2_text.get(), len(pdf_reader.pages))
         if (len(pages) == 0): return ttk.tkinter.messagebox.showinfo("Info", "Incorrect range formating")
 
-        filename = fd.asksaveasfile(title='Save a file', defaultextension='.pdf', filetypes=[('PDF files', '*.pdf')]).name
+        filename = fd.asksaveasfile(title="Save a file", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]).name
         if (filename == ""): return
 
         pdf_writer = PyPDF2.PdfWriter()
@@ -142,7 +142,7 @@ class App(tk.Tk):
         ttk.tkinter.messagebox.showinfo("Info", "Split successful")
 
     def Button2_command(self):
-        filename = self.Entry_set(self.Entry1_text, [('PDF files', '*.pdf')])
+        filename = self.Entry_set(self.Entry1_text, [("PDF files", "*.pdf")])
         if (filename == ""): return
         pdf_file = PyPDF2.PdfReader(open(filename, "rb"))
         self.Entry2_text.set(f"{1}-{len(pdf_file.pages)}")
@@ -151,7 +151,7 @@ class App(tk.Tk):
         try:
             selected_items = self.Listbox1.get_children()
             if not selected_items: return ttk.tkinter.messagebox.showinfo("Info", "No files selected for merging")
-            out_filename = fd.asksaveasfile(title='Save a file', defaultextension='.pdf', filetypes=[('PDF files', '*.pdf')]).name
+            out_filename = fd.asksaveasfile(title="Save a file", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]).name
             if (out_filename == ""): return
             pdf_writer = PyPDF2.PdfWriter()
 
@@ -160,7 +160,7 @@ class App(tk.Tk):
                 pdf_reader = PyPDF2.PdfReader(open(file_path, "rb"))
                 for page in pdf_reader.pages: pdf_writer.add_page(page)
 
-            with open(out_filename, 'wb') as out: pdf_writer.write(out)
+            with open(out_filename, "wb") as out: pdf_writer.write(out)
             ttk.tkinter.messagebox.showinfo("Info", "Merging successful")
         except Exception as e:
             ttk.tkinter.messagebox.showerror("Error", f"Error merging files: {str(e)}")
@@ -169,7 +169,7 @@ class App(tk.Tk):
         try:
             selected_items = self.Listbox2.get_children()
             if not selected_items: return ttk.tkinter.messagebox.showinfo("Info", "No files selected for converting")
-            out_filename = fd.asksaveasfile(title='Save a file', defaultextension='.pdf', filetypes=[('PDF files', '*.pdf')]).name
+            out_filename = fd.asksaveasfile(title="Save a file", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]).name
             if (out_filename == ""): return
             pdf_writer = PyPDF2.PdfWriter()
 
@@ -179,7 +179,7 @@ class App(tk.Tk):
                 pdf_reader = PyPDF2.PdfReader(io.BytesIO(pdf_data))
                 for page in pdf_reader.pages: pdf_writer.add_page(page)
 
-            with open(out_filename, 'wb') as out: pdf_writer.write(out)
+            with open(out_filename, "wb") as out: pdf_writer.write(out)
             ttk.tkinter.messagebox.showinfo("Info", "Converting successful")
         except Exception as e:
             ttk.tkinter.messagebox.showerror("Error", f"Error converting files: {str(e)}")

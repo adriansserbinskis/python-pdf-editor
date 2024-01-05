@@ -40,7 +40,7 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 1. Pārliecinieties, vai jūsu datorā ar Tkinter ir instalēts Python 3.x.
 
-2. Instalējiet vajadzīgās bibliotēkas, izmantojot šādu komandu: `pip install -r prasības.txt`
+2. Instalējiet vajadzīgās bibliotēkas, izmantojot šādu komandu: `pip install -r requirements.txt`
 
 3. Palaidiet Python skriptu python python-pdf-editor.py, lai palaistu lietojumprogrammu.
 <br/>

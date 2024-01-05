@@ -77,7 +77,7 @@
 
 4. Izvēlieties vietu, kur saglabāt PDF failu.
 
-##### Attēlu ekstraktēšana cilne
+##### Attēlu ekstraktēšanas cilne
 
 1. Noklikšķiniet uz pogas "+", lai atlasītu PDF failu.
 

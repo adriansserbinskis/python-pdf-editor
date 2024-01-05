@@ -1,6 +1,6 @@
 # Python PDF redaktors
 
-Šī Python lietojumprogramma, kas izveidota, izmantojot Tkinter bibliotēku, nodrošina lietotājam draudzīgu saskarni PDF failu sadalīšanai un apvienošanai. Tas izmanto PyPDF2 bibliotēku, lai apstrādātu PDF failu darbības.
+Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas piedāvā funkcionalitāti, piemēram, sadalīšanu, apvienošanu un attēlu konvertāciju PDF formātu. Šī programma piedāvā lietotājam ērtu saskarni, kurā var norādīt konkrētus PDF failus un veikt operācijas ar tiem. Tā tiek izstrādāta, lai uzlabotu darba efektivitāti ar PDF dokumentiem, piedāvājot ātru un vieglu veidu, kā tos apstrādāt.
 
 <p align="center"><img src="https://i.imgur.com/bTDXBEH.png"/></p>
 

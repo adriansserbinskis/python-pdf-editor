@@ -42,7 +42,7 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 2. Instalējiet vajadzīgās bibliotēkas, izmantojot šādu komandu: `pip install -r requirements.txt`
 
-3. Palaidiet Python skriptu python python-pdf-editor.py, lai palaistu lietojumprogrammu.
+3. Palaidiet Python skriptu `python python-pdf-editor.py`, lai palaistu lietojumprogrammu.
 <br/>
 
 ## Lietošanas instrukcijas

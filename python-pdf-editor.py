@@ -5,6 +5,8 @@ import tkinter.ttk as ttk
 import tkinter.filedialog as fd
 import img2pdf
 import PyPDF2
+from tkinter import filedialog
+from pypdf import PdfReader
 
 
 
@@ -46,18 +48,21 @@ class App(tk.Tk):
         self.style.theme_use("xpnative")
 
         self.Notebook1 = ttk.Notebook(self)
-        self.Tab1 = ttk.Frame(self.Notebook1) 
-        self.Tab2 = ttk.Frame(self.Notebook1) 
-        self.Tab3 = ttk.Frame(self.Notebook1) 
+        self.Tab1 = ttk.Frame(self.Notebook1)
+        self.Tab2 = ttk.Frame(self.Notebook1)
+        self.Tab3 = ttk.Frame(self.Notebook1)
+        self.Tab4 = ttk.Frame(self.Notebook1)
 
         self.Notebook1.add(self.Tab1, text="Split")
         self.Notebook1.add(self.Tab2, text="Merge")
         self.Notebook1.add(self.Tab3, text="Images to PDF")
+        self.Notebook1.add(self.Tab4, text="Extract images")
         self.Notebook1.pack(expand=1, fill="both")
 
         self.__init_tab1(self.Tab1)
         self.__init_tab2(self.Tab2)
         self.__init_tab3(self.Tab3)
+        self.__init_tab4(self.Tab4)
 
     def __init_tab1(self, tab):
         self.Entry1_text = tk.StringVar()
@@ -96,6 +101,22 @@ class App(tk.Tk):
         self.Button6 = ttk.Button(tab, text="+", command=lambda: self.Listbox_add(self.Listbox2, [('Image files', '*.png;*.jpeg;*.jpg;*.bmp;*.gif')]))
         self.Button6.place(x=20, y=280, width=25, height=25)
 
+    def __init_tab4(self, tab):
+        self.Entry3_text = tk.StringVar()
+        self.Entry3 = ttk.Entry(tab, state="readonly", cursor="arrow", textvariable=self.Entry3_text)
+        self.Entry3.place(x=20, y=20, width=460, height=25)
+
+        self.Button7 = ttk.Button(tab, text="Extract", command=self.Button8_command)
+        self.Button7.place(x=50, y=55, width=70, height=25)
+
+        self.Button8 = ttk.Button(tab, text="+", command=lambda: self.Entry_set(self.Entry3_text, [('PDF files', '*.pdf')]))
+        self.Button8.place(x=20, y=55, width=25, height=25)
+
+    def Entry_set(self, entry_text, filetypes):
+        filename = fd.askopenfilename(title='Open a file', filetypes=[('PDF files', '*.pdf')])
+        entry_text.set(filename)
+        return filename
+
     def Listbox_add(self, listbox, filetypes):
         files = fd.askopenfilenames(title='Open a files', filetypes=filetypes)
         for item in files: listbox.insert('', 'end', text=item)
@@ -108,23 +129,21 @@ class App(tk.Tk):
         if (filename == ""): return ttk.tkinter.messagebox.showinfo("Info", "Select pdf file first")
         if (not os.path.exists(filename)): return ttk.tkinter.messagebox.showinfo("Info", "File not found")
 
-        pdf_file = PyPDF2.PdfReader(open(filename, "rb"))
-        pages = extract_pages(self.Entry2_text.get(), len(pdf_file.pages))
+        pdf_reader = PyPDF2.PdfReader(open(filename, "rb"))
+        pages = extract_pages(self.Entry2_text.get(), len(pdf_reader.pages))
         if (len(pages) == 0): return ttk.tkinter.messagebox.showinfo("Info", "Incorrect range formating")
 
         filename = fd.asksaveasfile(title='Save a file', defaultextension='.pdf', filetypes=[('PDF files', '*.pdf')]).name
         if (filename == ""): return
 
         pdf_writer = PyPDF2.PdfWriter()
-        for index in pages: pdf_writer.add_page(pdf_file.pages[index-1])
-        with open(filename, 'wb') as out: pdf_writer.write(out)
+        for index in pages: pdf_writer.add_page(pdf_reader.pages[index-1])
+        with open(filename, "wb") as out: pdf_writer.write(out)
         ttk.tkinter.messagebox.showinfo("Info", "Split successful")
 
     def Button2_command(self):
-        filename = fd.askopenfilename(title='Open a file', filetypes=[('PDF files', '*.pdf')])
+        filename = self.Entry_set(self.Entry1_text, [('PDF files', '*.pdf')])
         if (filename == ""): return
-        self.Entry1_text.set(filename)
-
         pdf_file = PyPDF2.PdfReader(open(filename, "rb"))
         self.Entry2_text.set(f"{1}-{len(pdf_file.pages)}")
 
@@ -164,6 +183,22 @@ class App(tk.Tk):
             ttk.tkinter.messagebox.showinfo("Info", "Converting successful")
         except Exception as e:
             ttk.tkinter.messagebox.showerror("Error", f"Error converting files: {str(e)}")
+
+    def Button8_command(self):
+        filename = self.Entry3_text.get()
+        if (filename == ""): return ttk.tkinter.messagebox.showinfo("Info", "Select pdf file first")
+        if (not os.path.exists(filename)): return ttk.tkinter.messagebox.showinfo("Info", "File not found")
+
+        directory = filedialog.askdirectory()
+        if (directory == ""): return
+        pdf_reader = PdfReader(filename)
+
+        for pc, page in enumerate(pdf_reader.pages, start=0):
+            for ic, image_object in enumerate(page.images, start=0):
+                with open(f"{directory}/{os.path.basename(filename)}_{pc+1}_{ic+1}_{image_object.name}", "wb") as file:
+                    file.write(image_object.data)
+
+        ttk.tkinter.messagebox.showinfo("Info", "Extract successful")
 
 
 # Main loop=====================================================================

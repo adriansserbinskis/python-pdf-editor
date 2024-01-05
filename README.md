@@ -2,7 +2,7 @@
 
 Šī Python lietojumprogramma, kas izveidota, izmantojot Tkinter bibliotēku, nodrošina lietotājam draudzīgu saskarni PDF failu sadalīšanai un apvienošanai. Tas izmanto PyPDF2 bibliotēku, lai apstrādātu PDF failu darbības.
 
-<p align="center"><img src="https://i.imgur.com/hU17f5R.png"/></p>
+<p align="center"><img src="https://i.imgur.com/bTDXBEH.png"/></p>
 
 <br/><br/>
 
@@ -29,6 +29,10 @@
 - Atbalstītie attēlu formāti ietver JPEG, PNG, BMP un citus.
 
 - Saglabājiet pārveidotos attēlus PDF failā ar noteiktu nosaukumu.
+
+##### Attēla ekstraktēšana no PDF
+
+- Saglabājiet pārveidotos attēlus no PDF izvēlētājā direktorijā.
 
 <br/>
 
@@ -72,6 +76,14 @@
 3. Noklikšķiniet uz pogas "Convert".
 
 4. Izvēlieties vietu, kur saglabāt PDF failu.
+
+##### Attēlu ekstraktēšana cilne
+
+1. Noklikšķiniet uz pogas "+", lai atlasītu PDF failu.
+
+2. Noklikšķiniet uz pogas "Extract".
+
+3. Izvēlieties vietu, kur saglabāt attēlus no PDF.
 <br/>
 
 ## Lietotās bibliotēkas
@@ -79,6 +91,8 @@
 - **Tkinter**: Tkinter ir standarta GUI (grafiskā lietotāja interfeisa) rīkkopa, kas tiek komplektēta ar Python. Tas nodrošina rīku komplektu intuitīvu un interaktīvu grafisko saskarņu izveidei, padarot to par ideālu izvēli darbvirsmas lietojumprogrammu izstrādei.
 
 - **PyPDF2**: PyPDF2 ir Python bibliotēka, kas īpaši izstrādāta darbam ar PDF failiem. Tas ļauj lietojumprogrammai lasīt, apstrādāt un rakstīt PDF dokumentus. PyPDF2 iespējas ietver vairāku PDF failu sapludināšanu, PDF failu sadalīšanu, pamatojoties uz norādītajiem lappušu diapazoniem, un daudz ko citu.
+
+- **pypdf**: Pypdf ir bibliotēka, kura tiek izmantota, lai pārvarētu PyPDF2 ierobežojumus, īpaši caurspīdīgai attēlu iegūšanai, jo PyPDF2 nenodrošina tiešu atbalstu šai funkcijai.
 
 - **img2pdf**: Img2pdf ir bibliotēka, ko izmanto attēlu konvertēšanai PDF formātā. Šajā projektā to izmanto attēlu datu konvertēšanai PDF formātā pirms apvienošanas.
 

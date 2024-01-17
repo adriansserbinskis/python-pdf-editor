@@ -4,7 +4,19 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 <p align="center"><img src="images/preview.png"/></p>
 
-</p><iframe width="560" height="315" src="https://www.youtube.com/embed/3Ef6kT-kL1E?si=rBlt-DlMs4Nqoy2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+<video controls>
+  <source src="https://cdn.discordapp.com/attachments/388799305336487938/1197136282573352990/Untitled_Project_V1.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.  <a href="https://youtu.be/3Ef6kT-kL1E?si=saCq1dP2KCZ8Yi6V" target="_blank">Please upgrade your browser</a>
+</video>
+
+## Darba sākšana
+
+1. Pārliecinieties, vai jūsu datorā ir instalēts Python 3.x ar Tkinter.
+
+2. Instalējiet vajadzīgās bibliotēkas, izmantojot šādu komandu: `pip install -r requirements.txt`
+
+3. Palaidiet Python skriptu `python python-pdf-editor.py`, lai palaistu lietojumprogrammu.
+<br/>
 
 ## Iespējas
 
@@ -34,15 +46,6 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 - Saglabājiet pārveidotos attēlus no PDF izvēlētājā direktorijā.
 
-<br/>
-
-## Darba sākšana
-
-1. Pārliecinieties, vai jūsu datorā ir instalēts Python 3.x ar Tkinter.
-
-2. Instalējiet vajadzīgās bibliotēkas, izmantojot šādu komandu: `pip install -r requirements.txt`
-
-3. Palaidiet Python skriptu `python python-pdf-editor.py`, lai palaistu lietojumprogrammu.
 <br/>
 
 ## Lietošanas instrukcijas

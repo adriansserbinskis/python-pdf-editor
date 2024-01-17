@@ -4,9 +4,7 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 <p align="center"><img src="images/preview.png"/></p>
 
-[![](https://img.youtube.com/vi/3Ef6kT-kL1E/0.jpg)](https://www.youtube.com/watch?v=3Ef6kT-kL1E)
-
-<br/><br/>
+</p><iframe width="560" height="315" src="https://www.youtube.com/embed/3Ef6kT-kL1E?si=rBlt-DlMs4Nqoy2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
 
 ## Iespējas
 

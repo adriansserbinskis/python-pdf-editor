@@ -3,10 +3,7 @@
 Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas piedāvā funkcionalitāti, piemēram, sadalīšanu, apvienošanu un attēlu konvertāciju PDF formātu. Šī programma piedāvā lietotājam ērtu saskarni, kurā var norādīt konkrētus PDF failus un veikt operācijas ar tiem. Tā tiek izstrādāta, lai uzlabotu darba efektivitāti ar PDF dokumentiem, piedāvājot ātru un vieglu veidu, kā tos apstrādāt.
 
 <p align="center"><img src="images/preview.png"/></p>
-
-<video controls>
-  <source src="https://github.com/adriansserbinskis/python-pdf-editor/raw/master/images/preview.mp4" type="video/mp4">
-</video>
+[![](https://markdown-videos-api.jorgenkh.no/youtube/3Ef6kT-kL1E)](https://youtu.be/3Ef6kT-kL1E)
 
 ## Darba sākšana
 

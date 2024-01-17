@@ -4,8 +4,8 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 <p align="center"><img src="images/preview.png"/></p>
 
-<video width="320" height="240" controls>
-  <source src="https://cdn.discordapp.com/attachments/388799305336487938/1197136282573352990/Untitled_Project_V1.mp4" type="video/mp4">
+<video controls>
+  <source src="https://github.com/adriansserbinskis/python-pdf-editor/raw/master/images/preview.mp4" type="video/mp4">
 </video>
 
 ## Darba sākšana

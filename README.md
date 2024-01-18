@@ -2,13 +2,8 @@
 
 Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas piedāvā funkcionalitāti, piemēram, sadalīšanu, apvienošanu un attēlu konvertāciju PDF formātu. Šī programma piedāvā lietotājam ērtu saskarni, kurā var norādīt konkrētus PDF failus un veikt operācijas ar tiem. Tā tiek izstrādāta, lai uzlabotu darba efektivitāti ar PDF dokumentiem, piedāvājot ātru un vieglu veidu, kā tos apstrādāt.
 
-<p align="center"><img src="https://i.imgur.com/uIyVV9p.png" href="https://youtu.be/N7ZJQ879RVM"/></p>
-
-<p align="center">
-  <a href="https://youtu.be/N7ZJQ879RVM">
-    <img src="https://i.imgur.com/uIyVV9p.png" alt="Watch the video">
-  </a>
-</p>
+# YouTube Video
+<p align="center"><a href="https://youtu.be/N7ZJQ879RVM"><img src="https://i.imgur.com/uIyVV9p.png"></a></p>
 
 ## Darba sākšana
 

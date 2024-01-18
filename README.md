@@ -4,6 +4,8 @@ Projekta uzdevums bija izveidot automatizētu PDF failu apstrādes sistēmu, kas
 
 <p align="center"><img src="images/preview.png"/></p>
 
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)
+
 ## Darba sākšana
 
 1. Pārliecinieties, vai jūsu datorā ir instalēts Python 3.x ar Tkinter.

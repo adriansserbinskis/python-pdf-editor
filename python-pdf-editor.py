@@ -5,6 +5,7 @@ import tkinter.ttk as ttk
 import tkinter.filedialog as fd
 import img2pdf
 import PyPDF2
+from tkinter import messagebox
 from tkinter import filedialog
 from pypdf import PdfReader
 
@@ -126,12 +127,12 @@ class App(tk.Tk):
 
     def Button1_command(self):
         filename = self.Entry1_text.get()
-        if (filename == ""): return ttk.tkinter.messagebox.showinfo("Info", "Select pdf file first")
-        if (not os.path.exists(filename)): return ttk.tkinter.messagebox.showinfo("Info", "File not found")
+        if (filename == ""): return messagebox.showinfo("Info", "Select pdf file first")
+        if (not os.path.exists(filename)): return messagebox.showinfo("Info", "File not found")
 
         pdf_reader = PyPDF2.PdfReader(open(filename, "rb"))
         pages = extract_pages(self.Entry2_text.get(), len(pdf_reader.pages))
-        if (len(pages) == 0): return ttk.tkinter.messagebox.showinfo("Info", "Incorrect range formating")
+        if (len(pages) == 0): return messagebox.showinfo("Info", "Incorrect range formating")
 
         filename = fd.asksaveasfile(title="Save a file", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]).name
         if (filename == ""): return
@@ -139,7 +140,7 @@ class App(tk.Tk):
         pdf_writer = PyPDF2.PdfWriter()
         for index in pages: pdf_writer.add_page(pdf_reader.pages[index-1])
         with open(filename, "wb") as out: pdf_writer.write(out)
-        ttk.tkinter.messagebox.showinfo("Info", "Split successful")
+        messagebox.showinfo("Info", "Split successful")
 
     def Button2_command(self):
         filename = self.Entry_set(self.Entry1_text, [("PDF files", "*.pdf")])
@@ -150,7 +151,7 @@ class App(tk.Tk):
     def Button3_command(self):
         try:
             selected_items = self.Listbox1.get_children()
-            if not selected_items: return ttk.tkinter.messagebox.showinfo("Info", "No files selected for merging")
+            if not selected_items: return messagebox.showinfo("Info", "No files selected for merging")
             out_filename = fd.asksaveasfile(title="Save a file", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]).name
             if (out_filename == ""): return
             pdf_writer = PyPDF2.PdfWriter()
@@ -161,14 +162,14 @@ class App(tk.Tk):
                 for page in pdf_reader.pages: pdf_writer.add_page(page)
 
             with open(out_filename, "wb") as out: pdf_writer.write(out)
-            ttk.tkinter.messagebox.showinfo("Info", "Merging successful")
+            messagebox.showinfo("Info", "Merging successful")
         except Exception as e:
-            ttk.tkinter.messagebox.showerror("Error", f"Error merging files: {str(e)}")
+            tk.messagebox.showerror("Error", f"Error merging files: {str(e)}")
 
     def Button5_command(self):
         try:
             selected_items = self.Listbox2.get_children()
-            if not selected_items: return ttk.tkinter.messagebox.showinfo("Info", "No files selected for converting")
+            if not selected_items: return messagebox.showinfo("Info", "No files selected for converting")
             out_filename = fd.asksaveasfile(title="Save a file", defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]).name
             if (out_filename == ""): return
             pdf_writer = PyPDF2.PdfWriter()
@@ -180,14 +181,14 @@ class App(tk.Tk):
                 for page in pdf_reader.pages: pdf_writer.add_page(page)
 
             with open(out_filename, "wb") as out: pdf_writer.write(out)
-            ttk.tkinter.messagebox.showinfo("Info", "Converting successful")
+            messagebox.showinfo("Info", "Converting successful")
         except Exception as e:
-            ttk.tkinter.messagebox.showerror("Error", f"Error converting files: {str(e)}")
+            tk.messagebox.showerror("Error", f"Error converting files: {str(e)}")
 
     def Button8_command(self):
         filename = self.Entry3_text.get()
-        if (filename == ""): return ttk.tkinter.messagebox.showinfo("Info", "Select pdf file first")
-        if (not os.path.exists(filename)): return ttk.tkinter.messagebox.showinfo("Info", "File not found")
+        if (filename == ""): return messagebox.showinfo("Info", "Select pdf file first")
+        if (not os.path.exists(filename)): return messagebox.showinfo("Info", "File not found")
 
         directory = filedialog.askdirectory()
         if (directory == ""): return
@@ -198,7 +199,7 @@ class App(tk.Tk):
                 with open(f"{directory}/{os.path.basename(filename)}_{pc+1}_{ic+1}_{image_object.name}", "wb") as file:
                     file.write(image_object.data)
 
-        ttk.tkinter.messagebox.showinfo("Info", "Extract successful")
+        messagebox.showinfo("Info", "Extract successful")
 
 
 # Main loop=====================================================================
